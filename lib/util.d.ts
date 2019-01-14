@@ -1,0 +1,10 @@
+import { Data, Field, DataType } from 'apache-arrow';
+import { TKey, TField, TSchema, TFieldsMap } from './interfaces';
+export declare function fieldToKey(field: Field): string;
+export declare function newNullBitmap(length: number, fill?: boolean): Uint8Array;
+export declare function newEmptyData<T extends DataType>(data: Data<T>, length: number): Data<T>;
+export declare function assignFieldsMap<T extends TSchema>(fields?: Field[], map?: TFieldsMap<T>, offset?: number): Map<keyof T, [Field<T[keyof T]>, number]>;
+export declare function mergeMaps<TKey, TVal>(target?: Map<TKey, TVal>, ...sources: Map<TKey, TVal>[]): Map<TKey, TVal>;
+export declare function findNewFields<T extends TSchema, R extends TSchema>(map: TFieldsMap<T>, fields: TField<R>[], mergeOn: TKey<T & R>): Field<R[keyof R]>[];
+export declare function findCommonFields<T extends TSchema, R extends TSchema>(map: TFieldsMap<T>, fields: TField<R>[], mergeOn: TKey<T & R>): Field<R[keyof R]>[];
+export declare function findMergeOnKey<T extends TSchema, R extends TSchema>(mergeOn: TField<T & R> | TKey<T & R>, fieldsMap: TFieldsMap<T & R>): string;
