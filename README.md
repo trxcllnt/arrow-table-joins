@@ -3,7 +3,7 @@
 For now only the full outer join over fixed-width columns is implemented.
 
 ```js
-import { joinFull } from 'arrow-table-joins';
+import { fullJoin } from 'arrow-table-joins';
 import { Table, RecordBatchStreamReader } from 'apache-arrow';
 
 const lilTableStream = RecordBatchStreamReader.from(getLilTable());
@@ -11,7 +11,7 @@ const bigTableStream = RecordBatchStreamReader.from(getBigTable());
 
 const joinedRecordBatches = [];
 // join the values of `lilTable` into `bigTable` in-place
-for await (const recordBatch of joinFull('id', bigTable, lilTable)) {
+for await (const recordBatch of fullJoin('id', bigTable, lilTable)) {
     joinedRecordBatches.push(recordBatch);
 }
 
