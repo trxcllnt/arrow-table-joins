@@ -16,7 +16,7 @@
   "license": "ISC",
   "dependencies": {
     "@types/node": "10.12.18",
-    "apache-arrow": "graphistry/arrow#js-data-refactor",
+    "apache-arrow": "graphistry/arrow",
     "ix": "^2.5.1"
   },
   "files": ["index.js", "lib/", "README.md"],
