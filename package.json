@@ -1,6 +1,6 @@
 {
   "name": "arrow-table-joins",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -11,7 +11,11 @@
     "compile:watch": "tsc -p ./tsconfig.json -w",
     "test": "jest test/"
   },
-  "keywords": ["apache-arrow", "arrow", "dataframe"],
+  "keywords": [
+    "apache-arrow",
+    "arrow",
+    "dataframe"
+  ],
   "author": "Paul Taylor<paul.e.taylor@me.com>",
   "license": "ISC",
   "dependencies": {
@@ -19,7 +23,11 @@
     "apache-arrow": "graphistry/arrow",
     "ix": "^2.5.1"
   },
-  "files": ["index.js", "lib/", "README.md"],
+  "files": [
+    "index.js",
+    "lib/",
+    "README.md"
+  ],
   "devDependencies": {
     "@types/jest": "23.3.12",
     "jest": "23.6.0",
